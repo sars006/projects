@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Your Name — Résumé</title>
+  <meta name="description" content="Résumé and portfolio of Your Name." />
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <header class="container">
+    <h1>Your Name</h1>
+    <p class="subtitle">Student · Aspiring <span>Software Developer</span></p>
+    <nav class="contact">
+      <a href="mailto:you@example.com">you@example.com</a>
+      <span>•</span>
+      <a href="https://www.linkedin.com/in/your-handle" target="_blank" rel="noopener">LinkedIn</a>
+      <span>•</span>
+      <a href="https://github.com/your-handle" target="_blank" rel="noopener">GitHub</a>
+    </nav>
+  </header>
+
+  <main class="container">
+    <section>
+      <h2>Summary</h2>
+      <p>Brief 2–3 line elevator pitch about who you are, your strongest skills, and what roles you’re targeting.</p>
+    </section>
+
+    <section>
+      <h2>Skills</h2>
+      <ul class="tags">
+        <li>HTML</li><li>CSS</li><li>JavaScript</li><li>Python</li>
+        <li>Git</li><li>Data Structures</li>
+      </ul>
+    </section>
+
+    <section>
+      <h2>Projects</h2>
+      <article class="item">
+        <div class="item-head">
+          <h3>Project Title</h3>
+          <span class="meta">2025</span>
+        </div>
+        <p>One-sentence value statement. Mention impact/metrics if possible.</p>
+        <ul>
+          <li>What you built/tech used.</li>
+          <li>Problem it solved or result achieved.</li>
+        </ul>
+        <p><a href="https://github.com/your-handle/project" target="_blank" rel="noopener">Code</a> · <a href="#" target="_blank" rel="noopener">Live Demo</a></p>
+      </article>
+    </section>
+
+    <section>
+      <h2>Experience</h2>
+      <article class="item">
+        <div class="item-head">
+          <h3>Role — Company</h3>
+          <span class="meta">Month YYYY – Month YYYY</span>
+        </div>
+        <ul>
+          <li>Action verb + what you did + result (quantify if you can).</li>
+          <li>Another concise impact bullet.</li>
+        </ul>
+      </article>
+    </section>
+
+    <section>
+      <h2>Education</h2>
+      <p><strong>College Name</strong> — Degree / Major (YYYY–YYYY)</p>
+    </section>
+  </main>
+
+  <footer class="container footer">
+    <p>© <span id="y"></span> Your Name</p>
+  </footer>
+
+  <script>
+    document.getElementById('y').textContent = new Date().getFullYear();
+  </script>
+</body>
+</html>
