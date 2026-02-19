@@ -1,39 +1,72 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Simple Calculator</title>
-    <link rel="stylesheet" href="styles.css">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Calculator | Sarthak Shukla</title>
+  <link rel="stylesheet" href="styles.css" />
 </head>
 <body>
-    <div class="calculator">
-        <h1>Simple Calculator</h1>
-        <p>This is a basic mini project created by SARTHAK SHUKLA.</p>
-        <input type="number" id="num1" placeholder="First number">
-        <select id="operation">
-            <option value="+">+</option>
-            <option value="-">-</option>
-            <option value="*">*</option>
-            <option value="/">/</option>
-        </select>
-        <input type="number" id="num2" placeholder="Second number">
-        <button onclick="calculate()">Calculate</button>
-        <p id="result"></p>
-    </div>
-    <script>
-        function calculate() {
-            const num1 = parseFloat(document.getElementById('num1').value);
-            const num2 = parseFloat(document.getElementById('num2').value);
-            const operation = document.getElementById('operation').value;
-            let result;
-            if (operation === '+') result = num1 + num2;
-            else if (operation === '-') result = num1 - num2;
-            else if (operation === '*') result = num1 * num2;
-            else if (operation === '/' && num2 !== 0) result = num1 / num2;
-            else result = 'Error';
-            document.getElementById('result').innerText = 'Result: ' + result;
-        }
-    </script>
+
+  <div class="calculator">
+    <h1>Calculator</h1>
+    <p>Mini project by <strong>Sarthak Shukla</strong></p>
+
+    <input type="number" id="num1" placeholder="First number" />
+    
+    <select id="operation">
+      <option value="+">Addition (+)</option>
+      <option value="-">Subtraction (-)</option>
+      <option value="*">Multiplication (×)</option>
+      <option value="/">Division (÷)</option>
+    </select>
+
+    <input type="number" id="num2" placeholder="Second number" />
+
+    <button id="calcBtn">Calculate</button>
+
+    <p id="result"></p>
+  </div>
+
+  <script>
+    const btn = document.getElementById("calcBtn");
+
+    btn.addEventListener("click", calculate);
+    document.addEventListener("keydown", e => {
+      if (e.key === "Enter") calculate();
+    });
+
+    function calculate() {
+      const num1 = Number(document.getElementById("num1").value);
+      const num2 = Number(document.getElementById("num2").value);
+      const op = document.getElementById("operation").value;
+      const resultBox = document.getElementById("result");
+
+      if (isNaN(num1) || isNaN(num2)) {
+        resultBox.textContent = "❌ Please enter valid numbers";
+        return;
+      }
+
+      let result;
+      switch (op) {
+        case "+": result = num1 + num2; break;
+        case "-": result = num1 - num2; break;
+        case "*": result = num1 * num2; break;
+        case "/":
+          if (num2 === 0) {
+            resultBox.textContent = "❌ Division by zero not allowed";
+            return;
+          }
+          result = num1 / num2;
+          break;
+        default:
+          resultBox.textContent = "❌ Invalid operation";
+          return;
+      }
+
+      resultBox.textContent = `✅ Result: ${result}`;
+    }
+  </script>
+
 </body>
 </html>
