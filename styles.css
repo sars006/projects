@@ -36,3 +36,21 @@ a{color:var(--accent)}
   body{background:#fff}
   .item{break-inside:avoid}
 }
+.resume-download {
+  margin-top: 1rem;
+}
+
+.btn {
+  display: inline-block;
+  padding: 10px 18px;
+  border-radius: 6px;
+  background-color: #111;
+  color: #fff;
+  text-decoration: none;
+  font-weight: 500;
+  transition: background 0.2s ease;
+}
+
+.btn:hover {
+  background-color: #333;
+}
